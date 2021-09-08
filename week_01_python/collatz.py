@@ -1,3 +1,5 @@
+# Mini-project from Automate the Boring Stuff, Ch. 3
+
 # iterative implementation of Collatz Conjecture
 def collatz(number):
     while number > 1:
@@ -18,6 +20,7 @@ def collatz_recurs(number):
     print(number)
     collatz_recurs(number)
 
+# validate user input
 def user_input():
     while True:
         try:
