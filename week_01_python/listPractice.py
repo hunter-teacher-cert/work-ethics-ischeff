@@ -18,3 +18,17 @@ for row in list2:
     for elem in row:
         print(elem, end = ' ')
     print()
+
+# creating and printing a dummy list that resembles the cgol board
+list3 = [' ', '#', ' ', '#']
+print(list3)
+
+# doing the same with a list of lists
+list4 = [['', '#', '', '#'], ['#', '', '#', '']]
+print(list4)
+
+# printing it
+for row in list4: # somehow this version looks like what I want - it just prints the characters! 
+    for elem in row:
+        print(elem, end = ' ')
+    print()
