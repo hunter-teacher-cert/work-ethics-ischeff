@@ -28,7 +28,14 @@ list4 = [['', '#', '', '#'], ['#', '', '#', '']]
 print(list4)
 
 # printing it
-for row in list4: # somehow this version looks like what I want - it just prints the characters! 
+for row in list4: # somehow this version looks like what I want - it just prints the characters!
     for elem in row:
         print(elem, end = ' ')
     print()
+
+# trying out something from a list comprehension tutorial
+list5 = [] # creates empty list
+for i in range(12):
+    if i % 2 == 1: # if number is odd
+        list5.append(i) # add odds to list
+print(list5)
