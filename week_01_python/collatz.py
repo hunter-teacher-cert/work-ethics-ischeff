@@ -12,7 +12,7 @@ def collatz(number):
 # recursive implementation of Collatz Conjecture
 def collatz_recurs(number):
     if number == 1:
-        return number
+        return
     elif number % 2 == 0:
         number = number // 2
     else:
