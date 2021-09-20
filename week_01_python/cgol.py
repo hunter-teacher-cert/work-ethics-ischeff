@@ -17,8 +17,10 @@ def create_new_board(rows, cols):
     board = []
     for i in range(cols):
         col = []
-            for y in range(rows):
-                col.append(' ')
+        for j in range(rows):
+            col.append(0)
+        board.append(col)
+    return board
 
 # print the board to the terminal
 def print_board(board):
@@ -42,3 +44,7 @@ def print_board(board):
 
 # "repaint" by using an ANSI control character to
 # repeatedly place the cursor at the origin (upper left)
+
+if __name__ == '__main__':
+    board1 = create_new_board(25, 25)
+    print_board(board1)
