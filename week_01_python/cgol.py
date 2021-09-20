@@ -1,6 +1,31 @@
+# This program was created (albeit clusmily) by Ian Scheffler
+
+# /**
+#    The Rules of Life:
+#    Survivals:
+#    * A cell with 2 or 3 living neighbours will survive for the next generation.
+#    Death:
+#    * Each cell with >3 neighbours will die from overpopulation.
+#    * Every cell with <2 neighbours will die from isolation.
+#    Birth:
+#    * Each dead cell adjacent to exactly 3 living neighbours is a birth cell. It will come alive next generation.
+#    NOTA BENE:  All births and deaths occur simultaneously. Together, they constitute a single generation
+# */
+
 # initialize empty board (all cells dead)
+def create_new_board(rows, cols):
+    board = []
+    for i in range(cols):
+        col = []
+            for y in range(rows):
+                col.append(' ')
 
 # print the board to the terminal
+def print_board(board):
+    for row in board:
+        for elem in row:
+            print(elem, end = ' ')
+        print()
 
 # set a single cell  located at (rows, cols) to value val
 
@@ -17,9 +42,3 @@
 
 # "repaint" by using an ANSI control character to
 # repeatedly place the cursor at the origin (upper left)
-
-
-def print_board(width, length):
-    for i in range(width):
-        for j in range(length):
-            print
