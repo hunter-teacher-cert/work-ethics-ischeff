@@ -18,7 +18,7 @@ def create_new_board(rows, cols):
     for i in range(cols):
         col = []
         for j in range(rows):
-            col.append(0)
+            col.append(' ')
         board.append(col)
     return board
 
@@ -51,6 +51,6 @@ def set_cell(board, rows, cols, val):
 if __name__ == '__main__':
     board1 = create_new_board(30, 30)
     print_board(board1)
-    set_cell(board1, 0, 0, 1)
-    print()
-    print_board(board1)
+    # set_cell(board1, 0, 0, 1)
+    # print()
+    # print_board(board1)
