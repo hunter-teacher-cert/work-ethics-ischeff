@@ -30,6 +30,8 @@ def print_board(board):
         print()
 
 # set a single cell  located at (rows, cols) to value val
+def set_cell(board, rows, cols, val):
+    board[rows][cols] = val
 
 # return number of living neigbours of board[r][c]
 
@@ -45,6 +47,10 @@ def print_board(board):
 # "repaint" by using an ANSI control character to
 # repeatedly place the cursor at the origin (upper left)
 
+# main function (written with python if name idiom)
 if __name__ == '__main__':
-    board1 = create_new_board(25, 25)
+    board1 = create_new_board(30, 30)
+    print_board(board1)
+    set_cell(board1, 0, 0, 1)
+    print()
     print_board(board1)
