@@ -19,7 +19,7 @@ def create_new_board(rows, cols):
     for i in range(cols):
         col = []
         for j in range(rows):
-            col.append('0')
+            col.append(' ')
         board.append(col)
     return board
 
@@ -62,9 +62,9 @@ def count_neighbours(board, rows, cols):
         startRow = rows - 1
         endRow = rows + 1
     #non edge cases
-    for row in board[startRow : endRow + 1]:
-        for cell in row[startCol : endCol + 1]:
-            if cell == 'X':
+    for row in board[startRow:endRow + 1]:
+        for cell in row[startCol:endCol + 1]:
+            if cell == "X":
                 sum += 1;
     return sum
 
@@ -72,7 +72,15 @@ def count_neighbours(board, rows, cols):
 # postcond: return next generation cell state based on CGOL rules
 # (alive 'X', dead ' ')
 def get_next_gen_cell(board, rows, cols):
-    
+    totalNeighbors = count_neighbours(board, rows, cols)
+    if (neighbors < 2 or neighbors > 3):
+        return ' '
+    elif (neighbors == 3):
+        return 'X'
+    elif (neighbors == 2):
+        return board[rows][cols]
+    else:
+        return '-'
 
 # generate new board representing next generation
 
