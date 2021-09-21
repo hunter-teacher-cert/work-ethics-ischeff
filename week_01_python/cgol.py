@@ -37,23 +37,35 @@ def set_cell(board, rows, cols, val):
 def count_neighbours(board, rows, cols):
     #target = board[rows][cols]
     sum = 0
-    if board[rows - 1][cols - 1] == 'X':
-        sum += 1
-    if board[rows - 1][cols] == 'X':
-        sum += 1
-    if board[rows - 1][cols + 1] == 'X':
-        sum += 1
-    if board[rows][cols - 1] == 'X':
-        sum += 1
-    if board[rows][cols + 1] == 'X':
-        sum += 1
-    if board[rows + 1][cols - 1] == 'X':
-        sum += 1
-    if board[rows + 1][cols] == 'X':
-        sum += 1
-    if board[rows + 1][cols + 1] == 'X':
-        sum += 1
-    print(sum)
+    startCol = cols - 1
+    endCol = cols + 1
+    startRow = rows - 1
+    endRow = rows + 1
+    # note: the following lines, which resolve issues of
+    # running off the board, were inspired by Jiyoon Kim's solution
+    #most top row
+    if (rows == 0 and cols !=0 and cols != len(board[0]) - 1):
+        startRow = rows;
+    #most left col
+    elif (cols == 0 and rows !=0 and rows != len(board) - 1):
+        startCol = cols;
+    #most bottom row
+    elif (rows == len(board)-1 and cols != 0 and cols != len(board[0]) - 1):
+        endRow = rows;
+    #most right cols
+    elif (cols == len(board[0]) - 1 and rows != 0 and rows !=len(board) - 1):
+        endCol = cols;
+    else:
+        startCol = cols - 1
+        endCol = cols + 1
+        startRow = rows - 1
+        endRow = rows + 1
+    #non edge cases
+    for row in board[startRow : endRow + 1]:
+        for cell in row[startCol : endCol + 1]:
+            if cell == 'X':
+                sum += 1;
+    return sum
 
 # precond: given a board and a cell
 # postcond: return next generation cell state based on CGOL rules
@@ -74,4 +86,4 @@ if __name__ == '__main__':
     # set_cell(board1, 0, 1, 'X')
     set_cell(board1, 29, 29, 'X')
     print_board(board1)
-    count_neighbours(board1, 29, 29)
+    print(count_neighbours(board1, 0, 0))
