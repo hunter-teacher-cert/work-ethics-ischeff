@@ -18,7 +18,7 @@ def create_new_board(rows, cols):
     for i in range(cols):
         col = []
         for j in range(rows):
-            col.append(' ')
+            col.append('0')
         board.append(col)
     return board
 
@@ -29,13 +29,15 @@ def print_board(board):
             print(elem, end = ' ')
         print()
 
-# set a single cell  located at (rows, cols) to value val
+# set a single cell located at (rows, cols) to value val
 def set_cell(board, rows, cols, val):
     board[rows][cols] = val
 
 # return number of living neigbours of board[r][c]
-def count_neighbours(board, rows, cols):
-    sum = 0
+# def count_neighbours(board, rows, cols):
+#     for row in board:
+#         for elem in row:
+
 
 
 # precond: given a board and a cell
@@ -54,4 +56,5 @@ if __name__ == '__main__':
     board1 = create_new_board(30, 30)
     # print_board(board1)
     set_cell(board1, 0, 0, 'X')
+    set_cell(board1, 29, 29, 'X')
     print_board(board1)
