@@ -98,11 +98,6 @@ def generate_next_board(board):
         r += 1;
     return nextBoard;
 
-# pause for n milliseconds
-
-# "repaint" by using an ANSI control character to
-# repeatedly place the cursor at the origin (upper left)
-
 # main function (written with python if name idiom)
 if __name__ == '__main__':
     board1 = create_new_board(30, 30)
@@ -114,5 +109,7 @@ if __name__ == '__main__':
     set_cell(board1, 15, 20, 'X')
     set_cell(board1, 29, 29, 'X')
     print_board(board1)
+    print("------------------")
+    print_board(generate_next_board(board1))
     print("------------------")
     print_board(generate_next_board(board1))
