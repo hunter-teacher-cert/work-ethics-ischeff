@@ -34,10 +34,28 @@ def set_cell(board, rows, cols, val):
     board[rows][cols] = val
 
 # return number of living neigbours of board[r][c]
-# def count_neighbours(board, rows, cols):
-#     for row in board:
-#         for elem in row:
-
+def count_neighbours(board):
+    # get coordinates of all cells
+    for row in board:
+        for elem in row:
+            leftCoord = (row - 1)
+            rightCoord = (row + 1)
+            aboveCoord = (elem + 1)
+            belowCoord = (elem - 1)
+            #sum up living neighbours
+            sum = 0
+            if board[leftCoord][aboveCoord] == 'X':
+                sum += 1
+            if board[leftCoord][aboveCoord] == 'X':
+                sum += 1
+            if board[leftCoord][aboveCoord] == 'X':
+                sum += 1
+            if board[leftCoord][aboveCoord] == 'X':
+                sum += 1
+            if board[leftCoord][aboveCoord] == 'X':
+                sum += 1
+            if board[leftCoord][aboveCoord] == 'X':
+                sum += 1
 
 
 # precond: given a board and a cell
