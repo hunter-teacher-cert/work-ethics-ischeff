@@ -103,7 +103,7 @@ if __name__ == '__main__':
     board1 = create_new_board(30, 30)
     # print_board(board1)
     set_cell(board1, 0, 0, 'X')
-    set_cell(board1, 0, 1, 'X')
+    # set_cell(board1, 0, 1, 'X')
     set_cell(board1, 0, 5, 'X')
     set_cell(board1, 10, 5, 'X')
     set_cell(board1, 15, 20, 'X')
