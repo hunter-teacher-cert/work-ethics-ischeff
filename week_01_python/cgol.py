@@ -91,8 +91,10 @@ def generate_next_board(board):
     numRow = len(board)
     numCol = len(board[0])
     newBoard = create_new_board(numRow, numCol)
-    for row in board:
-        for
+    for i in range(len(board)):
+        for j in range(len(board[0])):
+            newBoard[rows][cols] = generate_next_board(board, rows, cols)
+    return newBoard
 
 # pause for n milliseconds
 
@@ -105,6 +107,7 @@ if __name__ == '__main__':
     # print_board(board1)
     set_cell(board1, 0, 0, 'X')
     set_cell(board1, 0, 1, 'X')
+    set_cell(board1, 0, 5, 'X')
     set_cell(board1, 29, 29, 'X')
     print_board(board1)
-    print(count_neighbours(board1, 0, 0))
+    print_board(generate_next_board(board1))
