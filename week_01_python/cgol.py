@@ -35,8 +35,16 @@ def set_cell(board, rows, cols, val):
 
 # return number of living neigbours of board[r][c]
 def count_neighbours(board, rows, cols):
-    target = board[rows][cols]
-    print(target)
+    # target = board[rows][cols]
+    sum = 0
+    for i in range(len(board[rows-1]), len(board[rows + 2])):
+        if i < len(board) and  i >= 0:
+            for j in range(len(board[cols - 1]), len(board[cols + 2])):
+                if j < len(board[i]) and j >= 0 and (i != rows and j!= cols):
+                    if board[rows][cols] == 'X':
+                        sum += 1
+    print(sum)
+
 
 # precond: given a board and a cell
 # postcond: return next generation cell state based on CGOL rules
