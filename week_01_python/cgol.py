@@ -88,13 +88,15 @@ def get_next_gen_cell(board, rows, cols):
 
 # generate new board representing next generation
 def generate_next_board(board):
-    numRow = len(board)
-    numCol = len(board[0])
-    newBoard = create_new_board(numRow, numCol)
-    for i in range(len(board)):
-        for j in range(len(board[0])):
-            newBoard[rows][cols] = generate_next_board(board, rows, cols)
-    return newBoard
+    nextBoard=create_new_board(len(board),len(board[0]));
+    r = 0;
+    c = 0;
+    while r < len(board):
+        while c < len(board[0]):
+            nextBoard[r][c] = get_next_gen_cell(board,r,c)
+            c += 1
+        r += 1;
+    return nextBoard;
 
 # pause for n milliseconds
 
@@ -108,6 +110,9 @@ if __name__ == '__main__':
     set_cell(board1, 0, 0, 'X')
     set_cell(board1, 0, 1, 'X')
     set_cell(board1, 0, 5, 'X')
+    set_cell(board1, 10, 5, 'X')
+    set_cell(board1, 15, 20, 'X')
     set_cell(board1, 29, 29, 'X')
     print_board(board1)
+    print("------------------")
     print_board(generate_next_board(board1))
