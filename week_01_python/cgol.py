@@ -34,7 +34,9 @@ def set_cell(board, rows, cols, val):
     board[rows][cols] = val
 
 # return number of living neigbours of board[r][c]
-
+def count_neighbours(board, rows, cols):
+    sum = 0
+    
 
 # precond: given a board and a cell
 # postcond: return next generation cell state based on CGOL rules
