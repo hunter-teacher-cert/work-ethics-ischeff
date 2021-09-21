@@ -71,6 +71,8 @@ def count_neighbours(board, rows, cols):
 # precond: given a board and a cell
 # postcond: return next generation cell state based on CGOL rules
 # (alive 'X', dead ' ')
+def get_next_gen_cell(board, rows, cols):
+    
 
 # generate new board representing next generation
 
@@ -84,7 +86,7 @@ if __name__ == '__main__':
     board1 = create_new_board(30, 30)
     # print_board(board1)
     set_cell(board1, 0, 0, 'X')
-    # set_cell(board1, 0, 1, 'X')
+    set_cell(board1, 0, 1, 'X')
     set_cell(board1, 29, 29, 'X')
     print_board(board1)
     print(count_neighbours(board1, 0, 0))
