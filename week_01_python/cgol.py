@@ -72,17 +72,25 @@ def count_neighbours(board, rows, cols):
 # postcond: return next generation cell state based on CGOL rules
 # (alive 'X', dead ' ')
 def get_next_gen_cell(board, rows, cols):
-    totalNeighbors = count_neighbours(board, rows, cols)
-    if (neighbors < 2 or neighbors > 3):
-        return ' '
-    elif (neighbors == 3):
-        return 'X'
-    elif (neighbors == 2):
-        return board[rows][cols]
+    numNeighbors = count_neighbours(board, rows, cols)
+    newCell = ' '
+    if (board[rows][cols] == 'X'):
+        if (numNeighbors > 3 or numNeighbors < 2):
+            newCell = ' ' # cell dies
+        else:
+            newCell = 'X' # cell lives
     else:
-        return '-'
+        if numNeighbors == 3:
+            newCell = 'X' # cell is born
+        else:
+            newCell = ' ' # cell stays dead
+    return newCell
 
 # generate new board representing next generation
+def generate_next_board(board):
+    numRow = len(board)
+    numCol = len(board[0])
+    newBoard = create_new_board(numRow, numCol)
 
 # pause for n milliseconds
 
