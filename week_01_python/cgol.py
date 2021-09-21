@@ -1,4 +1,5 @@
-# This program was created (albeit clusmily) by Ian Scheffler
+# This program was created (albeit clusmily) by Ian Scheffler, with contributions by Jiyoon Kim,
+# in particular with the count_neighbors function
 
 # /**
 #    The Rules of Life:
