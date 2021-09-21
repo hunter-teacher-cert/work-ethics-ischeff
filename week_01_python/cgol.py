@@ -36,7 +36,7 @@ def set_cell(board, rows, cols, val):
 # return number of living neigbours of board[r][c]
 def count_neighbours(board, rows, cols):
     sum = 0
-    
+
 
 # precond: given a board and a cell
 # postcond: return next generation cell state based on CGOL rules
@@ -52,7 +52,6 @@ def count_neighbours(board, rows, cols):
 # main function (written with python if name idiom)
 if __name__ == '__main__':
     board1 = create_new_board(30, 30)
-    print_board(board1)
-    # set_cell(board1, 0, 0, 1)
-    # print()
     # print_board(board1)
+    set_cell(board1, 0, 0, 'X')
+    print_board(board1)
