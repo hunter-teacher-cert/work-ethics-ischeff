@@ -1,5 +1,5 @@
 # This program was created (albeit clusmily) by Ian Scheffler, with contributions by Jiyoon Kim,
-# in particular with the count_neighbors function
+# in particular with the count_neighbors function and generate next board function
 
 # /**
 #    The Rules of Life:
