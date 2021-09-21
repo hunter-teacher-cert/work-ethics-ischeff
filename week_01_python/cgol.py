@@ -91,6 +91,8 @@ def generate_next_board(board):
     numRow = len(board)
     numCol = len(board[0])
     newBoard = create_new_board(numRow, numCol)
+    for row in board:
+        for
 
 # pause for n milliseconds
 
