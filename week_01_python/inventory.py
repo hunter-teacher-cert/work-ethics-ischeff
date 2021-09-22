@@ -13,10 +13,16 @@ def displayInventory(inventory):
     print('Total items: ' + str(total_items))
 
 def addToInventory(inventory, added_items):
+    for i in added_items:
+        inventory.setdefault(i,0)
+        inventory[i] = inventory[i] + 1
+    displayInventory(inventory)
     # check if item is in inventory, if so, update value
-    # if item is NOT in inventory, then add to dictionary 
+    # if item is NOT in inventory, then add to dictionary
 
 
 
 if __name__ == '__main__':
     displayInventory(my_stuff)
+    loot = ['gold', 'gold', 'gold', 'arrow', 'arrow']
+    addToInventory(my_stuff, loot)
