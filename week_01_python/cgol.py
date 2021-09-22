@@ -43,17 +43,20 @@ def count_neighbours(board, rows, cols):
     startRow = rows - 1
     endRow = rows + 1
     # note: the following lines, which resolve issues of
-    # running off the board, were inspired by Jiyoon Kim's solution
-    #most top row
+    # running off the board, were inspired by Jiyoon Kim's solution,
+    # which essentially uses if statements to avoid running off the four
+    # edges of the board, and then two nested for loops to sum the neighbours
+    
+    # most top row
     if (rows == 0 and cols !=0 and cols != len(board[0]) - 1):
         startRow = rows;
-    #most left col
+    # most left col
     elif (cols == 0 and rows !=0 and rows != len(board) - 1):
         startCol = cols;
-    #most bottom row
+    # most bottom row
     elif (rows == len(board)-1 and cols != 0 and cols != len(board[0]) - 1):
         endRow = rows;
-    #most right cols
+    # most right cols
     elif (cols == len(board[0]) - 1 and rows != 0 and rows !=len(board) - 1):
         endCol = cols;
     else:
@@ -61,7 +64,7 @@ def count_neighbours(board, rows, cols):
         endCol = cols + 1
         startRow = rows - 1
         endRow = rows + 1
-    #non edge cases
+    # non edge cases
     for row in board[startRow:endRow + 1]:
         for cell in row[startCol:endCol + 1]:
             if cell == "X":
