@@ -12,8 +12,11 @@ def displayInventory(inventory):
         total_items += v
     print('Total items: ' + str(total_items))
 
-def addItem(inventory):
-    
+def addToInventory(inventory, added_items):
+    # check if item is in inventory, if so, update value
+    # if item is NOT in inventory, then add to dictionary 
+
+
 
 if __name__ == '__main__':
     displayInventory(my_stuff)
