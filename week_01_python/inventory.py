@@ -17,18 +17,13 @@ def addToInventory(inventory, added_items):
         inventory.setdefault(i,0)
         inventory[i] = inventory[i] + 1
     displayInventory(inventory)
-    # check if item is in inventory, if so, update value
-    # if item is NOT in inventory, then add to dictionary
 
-def removeFromInventory(inventor, removed_items):
-    for i in removed_items:
-        inventory.pop(i,0)
-        inventory[i] = inventory[i] - 1
+def removeFromInventory(inventory, removed_items):
+    inventory.pop(removed_items)
     displayInventory(inventory)
-
 
 if __name__ == '__main__':
     displayInventory(my_stuff)
     loot = ['gold', 'gold', 'gold', 'arrow', 'arrow']
     addToInventory(my_stuff, loot)
-    removeFromInventory(gold)
+    removeFromInventory(my_stuff, 'gold')
