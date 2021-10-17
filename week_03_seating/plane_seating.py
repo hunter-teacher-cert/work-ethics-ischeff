@@ -1,4 +1,8 @@
 # This is a collab between Eric Wilson and Ian Scheffler
+# Next steps:
+# Generalize the code added to seat_economy to work for any nxn size plane
+# Fix the bug where if a block of seat is NOT found in the requested size, everyone still gets seated
+# Figure out why some available seats are not assigned when the economy class is seated 
 
 import random
 
@@ -173,7 +177,7 @@ def seat_economy(plane,economy_sold,name):
 
     # note: can use the .get method to get the value for the key "name"
     # note: the lines below are hardcoded for a 10x5 grid plane
-    # we would LIKE to generalize this, but wanted to test this out first 
+    # we would LIKE to generalize this, but wanted to test this out first
     for row in order:
         if plane[row][1] == "avail" and plane[row][2] == "avail" and plane[row][3] == "avail" and requested_number_of_seats == 3: # this if statement will check if it's avail; we also need to make the conditional
             plane[row][1] = name
