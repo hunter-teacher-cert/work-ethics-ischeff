@@ -2,7 +2,7 @@
 # Next steps:
 # Generalize the code added to seat_economy to work for any nxn size plane
 # Fix the bug where if a block of seat is NOT found in the requested size, everyone still gets seated
-# Figure out why some available seats are not assigned when the economy class is seated 
+# Figure out why some available seats are not assigned when the economy class is seated
 
 import random
 
@@ -193,13 +193,16 @@ def seat_economy(plane,economy_sold,name):
             plane[row][3] = name
             return plane
 
-    found_seat = False
-    while not(found_seat):
+    #found_seat = False
+    counter = 0
+    #while not(found_seat):
+    while counter != requested_number_of_seats:
         r_row = random.randrange(0,rows)
         r_col = random.randrange(0,cols)
         if plane[r_row][r_col] == "win" or plane[r_row][r_col] == "avail":
             plane[r_row][r_col] = name
-            found_seat = True
+            #found_seat = True
+            counter = counter + 1
     return plane
 
 
