@@ -1,8 +1,7 @@
 # This is a collab between Eric Wilson and Ian Scheffler
 # Next steps:
 # Generalize the code added to seat_economy to work for any nxn size plane
-# Fix the bug where if a block of seat is NOT found in the requested size, everyone still gets seated
-# Figure out why some available seats are not assigned when the economy class is seated
+# Revise the economy seating algo to seat folks who can't sit next to each other to sit CLOSE to each other
 
 import random
 
@@ -195,7 +194,7 @@ def seat_economy(plane,economy_sold,name):
 
     # the below is supposed to trigger when there is not a contiguous block of the required size--
     # anyone in a party that can't be seated contiguously will be seated randomly
-    # ideally we would revise this to seat people in semi-optimal conditions, i.e., closer together than farther apart. 
+    # ideally we would revise this to seat people in semi-optimal conditions, i.e., closer together than farther apart.
     #found_seat = False
     counter = 0
     #while not(found_seat):
