@@ -193,6 +193,9 @@ def seat_economy(plane,economy_sold,name):
             plane[row][3] = name
             return plane
 
+    # the below is supposed to trigger when there is not a contiguous block of the required size--
+    # anyone in a party that can't be seated contiguously will be seated randomly
+    # ideally we would revise this to seat people in semi-optimal conditions, i.e., closer together than farther apart. 
     #found_seat = False
     counter = 0
     #while not(found_seat):
