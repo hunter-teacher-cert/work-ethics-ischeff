@@ -7,7 +7,7 @@ def find_name(line):
     # result = re.findall(pattern,line)
 
     # last name with salutation
-    pattern = r"(\b(M[srx]\.|(Mrs\.)) [A-Z][a-z]*)"
+    pattern = r"(M[srx]\. [A-Z][a-z]*)"
     result = re.findall(pattern,line)
 
     # # full name (last and first) without salutation
@@ -21,7 +21,7 @@ def find_name(line):
 
 f = open("names.txt")
 for line in f.readlines():
-    #print(line)
+    print(line)
     result = find_name(line)
     if (len(result)>0):
         print(result)
