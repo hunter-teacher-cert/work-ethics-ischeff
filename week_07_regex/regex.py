@@ -2,11 +2,17 @@ import re
 
 
 def find_name(line):
-    pattern = r"\d{1,2}/\d{1,2}/\d{2,4}"
+    # # full name (last and first) with salutation
+    # pattern = r"\b(M[srx]\.)"
+    # result = re.findall(pattern,line)
+
+    # last name with salutation
+    pattern = r"(\b(M[srx]\.) [A-Z][a-z]*)"
     result = re.findall(pattern,line)
 
-    pattern = r"(October|Oct|November|Nov)( \d{1,2}, \d{4})"
-    result = result + re.findall(pattern,line)
+    # # full name (last and first) without salutation
+    # pattern = r""
+    # result = result + re.findall(pattern,line)
     return result
 
 
