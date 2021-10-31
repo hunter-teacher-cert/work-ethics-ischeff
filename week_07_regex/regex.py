@@ -12,11 +12,12 @@ def find_name(line):
 
     # last name with Mrs. salutation
     pattern = r"(Mrs\. [A-Z][a-z]*)"
-    result = results + re.findall(pattern,line)
+    result = result + re.findall(pattern,line)
 
-    # # full name (last and first) without salutation
-    # pattern = r""
-    # result = result + re.findall(pattern,line)
+    # full name (last and first) without salutation
+    # note: this is picking up proper nouns that aren't names
+    pattern = r"([A-Z]{1}[a-z]* [A-Z]{1}[a-z]*)"
+    result = result + re.findall(pattern,line)
     return result
 
 
