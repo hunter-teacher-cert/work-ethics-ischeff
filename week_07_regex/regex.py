@@ -6,9 +6,13 @@ def find_name(line):
     # pattern = r"\b(M[srx]\.)"
     # result = re.findall(pattern,line)
 
-    # last name with salutation
+    # last name with Mr., Mx. or Ms. salutation
     pattern = r"(M[srx]\. [A-Z][a-z]*)"
     result = re.findall(pattern,line)
+
+    # last name with Mrs. salutation
+    pattern = r"(Mrs\. [A-Z][a-z]*)"
+    result = results + re.findall(pattern,line)
 
     # # full name (last and first) without salutation
     # pattern = r""
