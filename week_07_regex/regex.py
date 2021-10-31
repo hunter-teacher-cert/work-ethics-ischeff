@@ -7,7 +7,7 @@ def find_name(line):
     # result = re.findall(pattern,line)
 
     # last name with salutation
-    pattern = r"(\b(M[srx]\.) [A-Z][a-z]*)"
+    pattern = r"(\b(M[srx]\.|(Mrs\.)) [A-Z][a-z]*)"
     result = re.findall(pattern,line)
 
     # # full name (last and first) without salutation
