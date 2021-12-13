@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.0/dist/magentamusic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <div id = "inputContainer">
+ <div>
+    <button class = "buttons" id="note" onclick="generateMelody()">Generate Melody</button>
+  <button class = "buttons" id="play">Play Melody</button>
+    </div>
+ <div id = "slider">
+      <input type = "range" id="temp" min ="0.5" max = "2.0" value = "1.00" step = "0.01">
+   <p id = "tempDisplay">Temperature: <span id="tempValue"></span></p>
+    </div>
+    </div>
+    <div class = "labelContainer">
+    <p id = "org">Original Melody</p>
+    <p id = "gen">Generated Melody</p>
+    </div>
+    <script src="Note.js"></script>
+    <script src="sketch.js"></script>
+
+  </body>
+</html>

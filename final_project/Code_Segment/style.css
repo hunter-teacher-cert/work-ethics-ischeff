@@ -1,0 +1,47 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+.buttons{
+  background-color: #0000ff;
+  color: white;
+  padding: 15px 12px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 24px;
+}
+
+.inputContainer{
+  display: flex;
+}
+
+
+
+.labelContainer{
+  display: flex;
+}
+
+#slider{
+  position: relative;
+  left: 450px;
+}
+
+#org{
+  font-size: 24px;
+  color: blue;
+}
+
+#gen {
+  position: relative;
+  font-size: 24px;
+  color: red;
+  left: 250px;
+}
+
+#tempDisplay {
+  font-size: 24px;
+}
